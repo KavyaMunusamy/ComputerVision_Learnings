@@ -1,0 +1,65 @@
+Simple Thresholding
+ret, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+Adaptive Thresholding
+cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+                      cv2.THRESH_BINARY, 11, 2)
+
+Otsu’s Thresholding
+ret, thresh = cv2.threshold(gray, 0, 255, 
+                            cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+
+Types of Thresholding:
+
+Binary
+
+Binary Inverse
+
+Truncate
+
+To Zero
+
+To Zero Inverse
+
+Adaptive (Mean, Gaussian):
+import cv2
+from google.colab.patches import cv2_imshow
+
+# Read image in grayscale
+img = cv2.imread('/content/habits-that-define-very-happy-people.jpg', 0)
+
+# Simple global threshold for comparison
+_, th_global = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+
+# Adaptive Mean Thresholding
+th_mean = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+                                cv2.THRESH_BINARY, 11, 2)
+
+# Adaptive Gaussian Thresholding
+th_gauss = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                 cv2.THRESH_BINARY, 11, 2)
+
+# Show results
+#cv2_imshow(img)         # Original
+#cv2_imshow(th_global)   # Global threshold
+#cv2_imshow(th_mean)     # Adaptive Mean
+cv2_imshow(th_gauss)    # Adaptive Gaussian
+
+Otsu’s:
+import cv2
+from google.colab.patches import cv2_imshow
+
+# Read image in grayscale
+img = cv2.imread('/content/habits-that-define-very-happy-people.jpg', 0)
+
+# Global threshold at 127
+_, th_global = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+
+# Otsu's Thresholding
+_, th_otsu = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+# Show results
+cv2_imshow(img)         # Original
+cv2_imshow(th_global)   # Global threshold
+cv2_imshow(th_otsu) 
