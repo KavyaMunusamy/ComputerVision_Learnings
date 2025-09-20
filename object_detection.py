@@ -47,3 +47,38 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+
+echnologies Used:
+
+Python 3
+
+OpenCV
+
+NumPy
+
+Key Features:
+
+Real-time detection from a webcam.
+
+Multiple colors detected simultaneously.
+
+Bounding boxes and labels for easy visualization.
+
+Threshold-based filtering to reduce noise.
+
+How to Run Locally:
+
+Clone the repository.
+
+Install dependencies:
+
+pip install opencv-python numpy
+
+
+Run the script:
+
+python object_detection.py
+
+
+Press q to exit the webcam window.
