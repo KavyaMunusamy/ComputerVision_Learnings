@@ -1,0 +1,16 @@
+Blurring reduces noise and smoothens the image.
+
+cv2.blur(img, (5,5))              # Average Blur
+cv2.GaussianBlur(img, (5,5), 0)   # Gaussian Blur
+cv2.medianBlur(img, 5)            # Median Blur
+cv2.bilateralFilter(img, 9, 75, 75) # Bilateral Filter
+
+
+Average Blur → simple smoothing
+
+Gaussian Blur → weighted smoothing
+
+Median Blur → good for removing salt-and-pepper noise
+
+Bilateral Filter → smooths while preserving edges
+
