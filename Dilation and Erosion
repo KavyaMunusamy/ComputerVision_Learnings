@@ -1,0 +1,16 @@
+Dilation
+
+Expands the white region in the image (thickens edges).
+
+kernel = np.ones((5,5), np.uint8)
+dilated = cv2.dilate(img, kernel, iterations=1)
+
+Erosion
+
+Shrinks the white region (thins edges).
+
+eroded = cv2.erode(img, kernel, iterations=1)
+
+
+👉 Often used together in tasks like noise removal.
+
