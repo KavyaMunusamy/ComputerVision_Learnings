@@ -1,0 +1,17 @@
+Reading an image: cv2.imread()
+image = cv2.imread("/content/image8.jpeg")
+print(image.shape)
+output : (100, 100, 3)
+
+Displaying an image: cv2.imshow()
+import cv2_imshow
+cv2_imshow(image)
+
+
+Writing an image: cv2.imwrite()
+
+Resizing: cv2.resize()
+
+Cropping: array slicing (img[100:300, 200:400])
+
+Drawing: cv2.line(), cv2.rectangle(), cv2.circle(), cv2.putText()
