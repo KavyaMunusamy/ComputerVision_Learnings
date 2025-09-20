@@ -1,0 +1,20 @@
+Edges are places with sharp intensity changes.
+
+Canny Edge Detector
+edges = cv2.Canny(img, 100, 200)
+
+
+Other methods:
+
+Sobel → detects horizontal/vertical edges
+
+Laplacian → detects edges in all directions
+
+import cv2
+from google.colab.patches import cv2_imshow
+
+img = cv2.imread('/content/images6.jpg')
+
+cv2_imshow(img)
+edge = cv2.Canny(img, 100, 200)
+cv2_imshow(edge)
