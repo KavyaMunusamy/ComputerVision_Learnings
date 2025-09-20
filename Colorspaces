@@ -1,0 +1,33 @@
+OpenCV uses BGR by default. We often need to convert between color spaces.
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)   # Grayscale
+hsv  = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)    # HSV
+rgb  = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)    # RGB
+
+
+BGR: Default format in OpenCV
+
+RGB: Human-friendly (red, green, blue)
+
+Grayscale: Single channel intensity
+
+HSV: Hue, Saturation, Value (good for filtering colors)
+
+import cv2
+from google.colab.patches import cv2_imshow
+
+img = cv2.imread('/content/habits-that-define-very-happy-people.jpg')
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2_imshow(gray)   # correct way in Colab
+
+ret, bin = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+ret, inv = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
+ret, tr = cv2.threshold(gray, 127, 255, cv2.THRESH_TRUNC)
+ret, tor = cv2.threshold(gray, 127, 255, cv2.THRESH_TOZERO)
+ret, torinv = cv2.threshold(gray, 127, 255, cv2.THRESH_TOZERO_INV)
+cv2_imshow(bin)
+cv2_imshow(inv)
+cv2_imshow(tr)
+cv2_imshow(tor)
+cv2_imshow(torinv)
